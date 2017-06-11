@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '10.0'
+use_frameworks!
+
+target 'BasketPrice' do
+    pod 'Alamofire', '~> 4.4'
+end
+
+target 'BasketPriceTests' do
+  pod 'Quick'
+  pod 'Nimble'
+end
