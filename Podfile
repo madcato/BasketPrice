@@ -5,8 +5,3 @@ use_frameworks!
 target 'BasketPrice' do
     pod 'Alamofire', '~> 4.4'
 end
-
-target 'BasketPriceTests' do
-  pod 'Quick'
-  pod 'Nimble'
-end
