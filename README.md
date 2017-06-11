@@ -9,5 +9,10 @@ Technical evaluation "iOS Developer" - Home coding exercise
 
 ## Dependencies
 
-- [Alamofire](https://github.com/Alamofire/Alamofire) CocoaPods 1.1.0+ is required to build Alamofire 4.0.0+
-- [Mock]
+- [Alamofire: Elegant HTTP Networking in Swift](https://github.com/Alamofire/Alamofire)      
+	CocoaPods 1.1.0+ is required to build Alamofire 4.0.0+
+- [Quick: The Swift (and Objective-C) testing framework.](https://github.com/Quick/Quick)
+
+## External services
+
+- [currencylayer](https://currencylayer.com/?ref=jsonrates) http://jsonrates.com seems deprecatedand some services fail.

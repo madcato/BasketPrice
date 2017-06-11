@@ -12,6 +12,9 @@
 		0B9336EA1EEBF31C004C7C73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B9336E91EEBF31C004C7C73 /* Assets.xcassets */; };
 		0B9336ED1EEBF31C004C7C73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B9336EB1EEBF31C004C7C73 /* LaunchScreen.storyboard */; };
 		0B9336F81EEBF31C004C7C73 /* BasketPriceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9336F71EEBF31C004C7C73 /* BasketPriceTests.swift */; };
+		0B9337091EED3B43004C7C73 /* GoodListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9337081EED3B43004C7C73 /* GoodListTableViewController.swift */; };
+		0B93370B1EED3B68004C7C73 /* CheckOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B93370A1EED3B68004C7C73 /* CheckOutViewController.swift */; };
+		0B93370D1EED3B9F004C7C73 /* GoodListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B93370C1EED3B9F004C7C73 /* GoodListTableViewCell.swift */; };
 		79F01CC17E31FC37F0C1A9C9 /* Pods_BasketPrice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B23576E0966D0A7875658FC5 /* Pods_BasketPrice.framework */; };
 		C4E9248AC6D3A10EFE8AC0A0 /* Pods_BasketPriceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC4BEA8D4892E25359E7DFC /* Pods_BasketPriceTests.framework */; };
 /* End PBXBuildFile section */
@@ -36,6 +39,9 @@
 		0B9336F31EEBF31C004C7C73 /* BasketPriceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasketPriceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B9336F71EEBF31C004C7C73 /* BasketPriceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketPriceTests.swift; sourceTree = "<group>"; };
 		0B9336F91EEBF31C004C7C73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B9337081EED3B43004C7C73 /* GoodListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodListTableViewController.swift; sourceTree = "<group>"; };
+		0B93370A1EED3B68004C7C73 /* CheckOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckOutViewController.swift; sourceTree = "<group>"; };
+		0B93370C1EED3B9F004C7C73 /* GoodListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodListTableViewCell.swift; sourceTree = "<group>"; };
 		4A30E57E7EE625C97B2B47C8 /* Pods-BasketPrice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasketPrice.release.xcconfig"; path = "Pods/Target Support Files/Pods-BasketPrice/Pods-BasketPrice.release.xcconfig"; sourceTree = "<group>"; };
 		5E702965AA9440DAF84AC50A /* Pods-BasketPriceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasketPriceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BasketPriceTests/Pods-BasketPriceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9C887A02AADD5B3982F692F5 /* Pods-BasketPriceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasketPriceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BasketPriceTests/Pods-BasketPriceTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +133,8 @@
 		0B9337051EED2D18004C7C73 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0B9337081EED3B43004C7C73 /* GoodListTableViewController.swift */,
+				0B93370A1EED3B68004C7C73 /* CheckOutViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -134,6 +142,7 @@
 		0B9337061EED2D20004C7C73 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0B93370C1EED3B9F004C7C73 /* GoodListTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -299,7 +308,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint lint --path BasketPrice\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		1B086953E4AC8835E5BF3351 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -383,6 +392,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B93370B1EED3B68004C7C73 /* CheckOutViewController.swift in Sources */,
+				0B9337091EED3B43004C7C73 /* GoodListTableViewController.swift in Sources */,
+				0B93370D1EED3B9F004C7C73 /* GoodListTableViewCell.swift in Sources */,
 				0B9336E31EEBF31C004C7C73 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
