@@ -10,6 +10,14 @@ import UIKit
 
 class GoodListTableViewController: UITableViewController {
 
+    var viewModel: GoodListViewModelProtocol? {
+        didSet {
+            viewModel?.listDidChange = { [unowned self] viewModel in
+                _ = self
+            }
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,8 +36,7 @@ class GoodListTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return viewModel?.numberOfSections ?? 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

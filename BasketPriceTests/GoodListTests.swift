@@ -31,12 +31,25 @@ class GoodListTests: XCTestCase {
             XCTAssertNotEqual(element.package, "", "GoodList load must return valid Good")
         }
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+
+    func testFailLoad() {
+        let list = GoodList.load(fromFile: "GoodListFail")
+        XCTAssertNil(list, "GoodList load must fail for an incorrect file name")
     }
     
+    func testLoadEmpty() {
+        let list = GoodList.load(fromFile: "GoodListFake")
+        XCTAssertNotNil(list, "GoodList load must return and array")
+        XCTAssertGreaterThan((list?.count)!, 0, "GoodList load must return more than one element")
+        if let element = list?[0] {
+            XCTAssertEqual(element.name, "", "GoodList load must return an empty Good")
+            XCTAssertEqual(element.price, 0.0, "GoodList load must return an empty Good")
+            XCTAssertEqual(element.package, "", "GoodList load must return an empty Good")
+        }
+    }
+
+    func testFailLoadProperty() {
+        let list = PropertyListHelper.loadArray(fromFile: "GoodListFail") as? [[String: Any]]
+        XCTAssertNil(list, "GoodList load must fail for an incorrect file name")
+    }
 }

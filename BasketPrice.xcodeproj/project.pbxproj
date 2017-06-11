@@ -25,6 +25,11 @@
 		0B9337201EED8A52004C7C73 /* CheckOutViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B93371F1EED8A52004C7C73 /* CheckOutViewControllerTests.swift */; };
 		0B9337211EED906C004C7C73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B9336E61EEBF31C004C7C73 /* Main.storyboard */; };
 		0B9337241EED94D8004C7C73 /* GoodListTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9337231EED94D8004C7C73 /* GoodListTableViewControllerTests.swift */; };
+		0B9337261EED98E5004C7C73 /* GoodListFake.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B9337251EED98E5004C7C73 /* GoodListFake.plist */; };
+		0B9337281EEDA65F004C7C73 /* GoodListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9337271EEDA65F004C7C73 /* GoodListViewModel.swift */; };
+		0B93372A1EEDB5F2004C7C73 /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9337291EEDB5F2004C7C73 /* Basket.swift */; };
+		0B93372C1EEDB67C004C7C73 /* BasketElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B93372B1EEDB67C004C7C73 /* BasketElement.swift */; };
+		0B93372E1EEDBC42004C7C73 /* BasketElementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B93372D1EEDBC42004C7C73 /* BasketElementTests.swift */; };
 		79F01CC17E31FC37F0C1A9C9 /* Pods_BasketPrice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B23576E0966D0A7875658FC5 /* Pods_BasketPrice.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +65,11 @@
 		0B93371D1EED8950004C7C73 /* AppDelegateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateTests.swift; sourceTree = "<group>"; };
 		0B93371F1EED8A52004C7C73 /* CheckOutViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckOutViewControllerTests.swift; sourceTree = "<group>"; };
 		0B9337231EED94D8004C7C73 /* GoodListTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodListTableViewControllerTests.swift; sourceTree = "<group>"; };
+		0B9337251EED98E5004C7C73 /* GoodListFake.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GoodListFake.plist; sourceTree = "<group>"; };
+		0B9337271EEDA65F004C7C73 /* GoodListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodListViewModel.swift; sourceTree = "<group>"; };
+		0B9337291EEDB5F2004C7C73 /* Basket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
+		0B93372B1EEDB67C004C7C73 /* BasketElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketElement.swift; sourceTree = "<group>"; };
+		0B93372D1EEDBC42004C7C73 /* BasketElementTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketElementTests.swift; sourceTree = "<group>"; };
 		4A30E57E7EE625C97B2B47C8 /* Pods-BasketPrice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasketPrice.release.xcconfig"; path = "Pods/Target Support Files/Pods-BasketPrice/Pods-BasketPrice.release.xcconfig"; sourceTree = "<group>"; };
 		A419AD273515AFA33226ABFF /* Pods-BasketPrice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasketPrice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BasketPrice/Pods-BasketPrice.debug.xcconfig"; sourceTree = "<group>"; };
 		B23576E0966D0A7875658FC5 /* Pods_BasketPrice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BasketPrice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +143,7 @@
 				0B93371D1EED8950004C7C73 /* AppDelegateTests.swift */,
 				0B93371F1EED8A52004C7C73 /* CheckOutViewControllerTests.swift */,
 				0B9337231EED94D8004C7C73 /* GoodListTableViewControllerTests.swift */,
+				0B93372D1EEDBC42004C7C73 /* BasketElementTests.swift */,
 			);
 			path = BasketPriceTests;
 			sourceTree = "<group>";
@@ -142,6 +153,8 @@
 			children = (
 				0B9337111EED5031004C7C73 /* Good.swift */,
 				0B9337151EED56D2004C7C73 /* GoodList.swift */,
+				0B9337291EEDB5F2004C7C73 /* Basket.swift */,
+				0B93372B1EEDB67C004C7C73 /* BasketElement.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -149,6 +162,7 @@
 		0B9337041EED2D11004C7C73 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0B9337271EEDA65F004C7C73 /* GoodListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -182,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				0B93370F1EED4F13004C7C73 /* GoodList.plist */,
+				0B9337251EED98E5004C7C73 /* GoodListFake.plist */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -295,6 +310,7 @@
 			files = (
 				0B9336ED1EEBF31C004C7C73 /* LaunchScreen.storyboard in Resources */,
 				0B9337101EED4F13004C7C73 /* GoodList.plist in Resources */,
+				0B9337261EED98E5004C7C73 /* GoodListFake.plist in Resources */,
 				0B9336EA1EEBF31C004C7C73 /* Assets.xcassets in Resources */,
 				0B9336E81EEBF31C004C7C73 /* Main.storyboard in Resources */,
 			);
@@ -379,9 +395,12 @@
 				0B93370B1EED3B68004C7C73 /* CheckOutViewController.swift in Sources */,
 				0B9337161EED56D2004C7C73 /* GoodList.swift in Sources */,
 				0B9337091EED3B43004C7C73 /* GoodListTableViewController.swift in Sources */,
+				0B9337281EEDA65F004C7C73 /* GoodListViewModel.swift in Sources */,
 				0B9337141EED510A004C7C73 /* PropertyListHelper.swift in Sources */,
 				0B9337121EED5031004C7C73 /* Good.swift in Sources */,
+				0B93372A1EEDB5F2004C7C73 /* Basket.swift in Sources */,
 				0B93370D1EED3B9F004C7C73 /* GoodListTableViewCell.swift in Sources */,
+				0B93372C1EEDB67C004C7C73 /* BasketElement.swift in Sources */,
 				0B9336E31EEBF31C004C7C73 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B93371E1EED8950004C7C73 /* AppDelegateTests.swift in Sources */,
+				0B93372E1EEDBC42004C7C73 /* BasketElementTests.swift in Sources */,
 				0B9337181EED58B4004C7C73 /* GoodListTests.swift in Sources */,
 				0B9336F81EEBF31C004C7C73 /* BasketPriceTests.swift in Sources */,
 				0B93371C1EED8887004C7C73 /* GoodListTableViewCellTests.swift in Sources */,

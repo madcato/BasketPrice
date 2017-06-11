@@ -9,8 +9,8 @@
 import Foundation
 
 class GoodList {
-    static func load() -> [Good]? {
-        guard let list = PropertyListHelper.loadArray(fromFile: "GoodList") as? [[String: Any]]
+    static func load(fromFile fileName: String = "GoodList") -> [Good]? {
+        guard let list = PropertyListHelper.loadArray(fromFile: fileName) as? [[String: Any]]
         else {
             return nil
         }

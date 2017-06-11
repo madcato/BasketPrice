@@ -8,8 +8,16 @@
 
 import Foundation
 
-struct Good {
+struct Good: Hashable {
     var name: String
     var price: Float
     var package: String
+
+    static func == (lvs: Good, rvs: Good) -> Bool {
+        return lvs.name == rvs.name
+    }
+
+    public var hashValue: Int {
+        return name.hashValue
+    }
 }
