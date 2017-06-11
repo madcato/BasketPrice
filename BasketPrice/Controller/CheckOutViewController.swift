@@ -36,7 +36,7 @@ UIPickerViewDelegate, UIPickerViewDataSource {
     */
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 0
+        return 1
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {

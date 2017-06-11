@@ -12,7 +12,7 @@
         <!--Basket-->
         <scene sceneID="cEQ-Z3-hMz">
             <objects>
-                <tableViewController id="YLd-9c-F0v" customClass="GoodListTableViewController" customModule="BasketPrice" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="GoodListTableViewController" id="YLd-9c-F0v" customClass="GoodListTableViewController" customModule="BasketPrice" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="28" id="h9a-UZ-Ufb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="68"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8qf-wJ-LWv" id="UuC-Ti-8QD">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="67.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Good" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sti-jE-5T6">
@@ -82,7 +82,7 @@
         <!--Check Out-->
         <scene sceneID="5qc-8f-hFZ">
             <objects>
-                <viewController id="0O8-eS-PgZ" customClass="CheckOutViewController" customModule="BasketPrice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CheckOutViewController" id="0O8-eS-PgZ" customClass="CheckOutViewController" customModule="BasketPrice" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Os7-kP-jLf"/>
                         <viewControllerLayoutGuide type="bottom" id="ARH-we-1oH"/>
