@@ -18,18 +18,24 @@ protocol CheckOutViewModelProtocol {
 	var totaAmount: String? { get }
 	var totaAmountDidChange: ((CheckOutViewModelProtocol) -> Void)? { get set }
 
+    func title(for row: Int, in component: Int) -> String?
+
     init(basket: Basket)
 }
 
 class CheckOutViewModel: CheckOutViewModelProtocol {
     var basket: Basket
     var amountInDollars: Float
+    var currencies: [Currency]
 
     required init(basket: Basket) {
         numberOfComponents = 0
         numberOfRows = []
         totaAmount = nil
         self.basket = basket
+        self.currencies = []
+
+        // FIXME Download currencies
 
         // Initial value will be in dollars
         self.amountInDollars = basket.calculateTotal()
@@ -59,4 +65,8 @@ class CheckOutViewModel: CheckOutViewModelProtocol {
         }
     }
     var totaAmountDidChange: ((CheckOutViewModelProtocol) -> Void)?
+
+    func title(for row: Int, in component: Int) -> String? {
+        return currencies[row].symbol
+    }
 }

@@ -10,6 +10,7 @@
 		0B0D73061EEE975A00EF076E /* BasketElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0D73041EEE93FF00EF076E /* BasketElement.swift */; };
 		0B137F7F1EEEF12000483E85 /* CurrencyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B137F7E1EEEF12000483E85 /* CurrencyHelper.swift */; };
 		0B137F811EEEF1FB00483E85 /* CurrencyHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B137F801EEEF1FB00483E85 /* CurrencyHelperTests.swift */; };
+		0B137F831EEEF5B200483E85 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B137F821EEEF5B200483E85 /* Currency.swift */; };
 		0B9336E31EEBF31C004C7C73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9336E21EEBF31C004C7C73 /* AppDelegate.swift */; };
 		0B9336E81EEBF31C004C7C73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B9336E61EEBF31C004C7C73 /* Main.storyboard */; };
 		0B9336EA1EEBF31C004C7C73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B9336E91EEBF31C004C7C73 /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 		0B0D73041EEE93FF00EF076E /* BasketElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketElement.swift; sourceTree = "<group>"; };
 		0B137F7E1EEEF12000483E85 /* CurrencyHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyHelper.swift; sourceTree = "<group>"; };
 		0B137F801EEEF1FB00483E85 /* CurrencyHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyHelperTests.swift; sourceTree = "<group>"; };
+		0B137F821EEEF5B200483E85 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		0B9336DF1EEBF31C004C7C73 /* BasketPrice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasketPrice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B9336E21EEBF31C004C7C73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B9336E71EEBF31C004C7C73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				0B9337151EED56D2004C7C73 /* GoodList.swift */,
 				0B9337291EEDB5F2004C7C73 /* Basket.swift */,
 				0B0D73041EEE93FF00EF076E /* BasketElement.swift */,
+				0B137F821EEEF5B200483E85 /* Currency.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 				0B9337121EED5031004C7C73 /* Good.swift in Sources */,
 				0B93372A1EEDB5F2004C7C73 /* Basket.swift in Sources */,
 				0B93370D1EED3B9F004C7C73 /* GoodListTableViewCell.swift in Sources */,
+				0B137F831EEEF5B200483E85 /* Currency.swift in Sources */,
 				0B9336E31EEBF31C004C7C73 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

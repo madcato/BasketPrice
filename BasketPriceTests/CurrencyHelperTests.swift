@@ -21,7 +21,7 @@ class CurrencyHelperTests: XCTestCase {
     
     func testDollars() {
         let amountStr = CurrencyHelper.format(4.65,
-                                          currencyCode: "USD")
+                                              currencyCode: "USD")
         XCTAssertEqual(amountStr, "$4.65", "Fail converting to dollars")
     }
     
