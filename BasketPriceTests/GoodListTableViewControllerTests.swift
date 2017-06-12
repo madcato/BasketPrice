@@ -31,8 +31,9 @@ class GoodListTableViewControllerTest: XCTestCase {
     }
 
     func testNumberOfRowsInSection() {
+        let rows = controller?.viewModel?.rowsPersection[0]
         let result = controller?.tableView((controller?.tableView)!,
                                            numberOfRowsInSection: 0)
-        XCTAssertEqual(result, 0, "Wrong numbers of rows in GoodListTableViewController")
+        XCTAssertEqual(result, rows, "Wrong numbers of rows in GoodListTableViewController")
     }
 }

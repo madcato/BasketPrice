@@ -61,5 +61,25 @@ class BasketElementTests: XCTestCase {
         XCTAssertTrue(result == nil, "Basket add failed")
     }
 
+    func testQty() {
+        let good = Good(name: "Prueba", price: 0.4, package: "pack")
+        basket?.add(good, qty: 2)
+        let qty = basket?.qty(for: good)
+        XCTAssertEqual(qty, 2, "Basket qty failed")
+    }
     
+    func testUpdate() {
+        let good = Good(name: "Prueba", price: 0.4, package: "pack")
+        basket?.update(good, qty: 2)
+        var result = basket?.includedElements.index(where: {
+            $0.article == good && $0.qty == 2
+        })
+        XCTAssertTrue(result != nil, "Basket update 1 failed")
+        
+        basket?.update(good, qty: 3)
+        result = basket?.includedElements.index(where: {
+            $0.article == good && $0.qty == 3
+        })
+        XCTAssertTrue(result != nil, "Basket update 2 failed")
+    }
 }
