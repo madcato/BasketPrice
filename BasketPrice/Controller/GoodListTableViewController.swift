@@ -12,20 +12,15 @@ class GoodListTableViewController: UITableViewController {
 
     var viewModel: GoodListViewModelProtocol? {
         didSet {
-            viewModel?.listDidChange = { [unowned self] viewModel in
-                _ = self
-            }
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        if let goodList = GoodList.load() {
+            self.viewModel = GoodListViewModel(data: goodList)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,18 +36,20 @@ class GoodListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return viewModel?.rowsPersection[section] ?? 0
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BasketCell",
+                                                 for: indexPath)
+        if let cell = cell as? GoodListTableViewCell {
+            let data = viewModel?.dataForCell(section: indexPath.section,
+                                              row: indexPath.row)
+            cell.configure(data)
 
-        // Configure the cell...
-
+        }
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

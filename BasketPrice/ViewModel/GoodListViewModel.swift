@@ -14,32 +14,29 @@ protocol GoodListInteractorProtocol {
 protocol GoodListViewModelProtocol {
     var numberOfSections: Int { get }
     var rowsPersection: [Int] { get }
-	var list: [Good] { get }
-	var listDidChange: ((GoodListViewModelProtocol) -> Void)? { get set }
 
-    init(interactor: GoodListInteractorProtocol)
+    func dataForCell(section: Int, row: Int) -> GoodListCellDataSource?
+
+    init(data: [Good])
 }
 
 class GoodListViewModel: GoodListViewModelProtocol {
     var numberOfSections: Int {
-            return 1
+        return 1
     }
 
     var rowsPersection: [Int] {
-            return [list.count]
+        return [data.count]
     }
 
-    var list: [Good] {
-        didSet {
-            self.listDidChange?(self)
-        }
+    func dataForCell(section: Int, row: Int) -> GoodListCellDataSource? {
+        guard data.count > row else { return nil }
+        return data[row]
     }
-    var listDidChange: ((GoodListViewModelProtocol) -> Void)?
 
-    var interactor: GoodListInteractorProtocol
+    var data: [Good]
 
-    required init(interactor: GoodListInteractorProtocol) {
-		self.list = []
-		self.interactor = interactor
+    required init(data: [Good]) {
+		self.data = data
     }
 }

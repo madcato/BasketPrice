@@ -8,11 +8,23 @@
 
 import UIKit
 
+protocol GoodListCellDataSource {
+    var nameForCell: String { get }
+    var priceForCell: String { get }
+    var qtyForCell: String { get }
+}
+
 class GoodListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var qtyLabel: UILabel!
+
+    func configure(_ data: GoodListCellDataSource?) {
+        nameLabel.text = data?.nameForCell
+        priceLabel.text = data?.priceForCell
+        qtyLabel.text = data?.qtyForCell
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,5 +38,6 @@ class GoodListTableViewCell: UITableViewCell {
     }
 
     @IBAction func qtyStepperChanged(_ sender: UIStepper) {
+        qtyLabel.text = "\(Int(sender.value))"
     }
 }
