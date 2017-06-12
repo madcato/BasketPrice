@@ -14,17 +14,16 @@ UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var priceActivity: UIActivityIndicatorView!
     @IBOutlet weak var currenciesPicker: UIPickerView!
 
-//    var viewModel: CheckOutViewModelProtocol? {
-//        didSet {
-//            viewModel?.numberOfComponentsDidChange = { [unowned self] viewModel in
-//            }
-//            viewModel?.numberOfRowsDidChange = { [unowned self] viewModel in
-//            }
-//            viewModel?.totaAmountDidChange = { [unowned self] viewModel in
-//            }
-//        }
-//    }
-
+    var viewModel: CheckOutViewModelProtocol? {
+        didSet {
+            viewModel?.numberOfComponentsDidChange = { [unowned self] viewModel in
+            }
+            viewModel?.numberOfRowsDidChange = { [unowned self] viewModel in
+            }
+            viewModel?.totaAmountDidChange = { [unowned self] viewModel in
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

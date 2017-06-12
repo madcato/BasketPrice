@@ -9,9 +9,9 @@
 import Foundation
 
 struct Good: Hashable {
-    var name: String
-    var price: Float
-    var package: String
+    var name: String = ""
+    var price: Float = 0.0
+    var package: String = ""
 
     static func == (lvs: Good, rvs: Good) -> Bool {
         return lvs.name == rvs.name

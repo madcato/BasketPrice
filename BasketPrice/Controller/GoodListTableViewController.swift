@@ -10,16 +10,14 @@ import UIKit
 
 class GoodListTableViewController: UITableViewController {
 
-    var viewModel: GoodListViewModelProtocol? {
-        didSet {
-        }
-    }
+    var viewModel: GoodListViewModelProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         if let goodList = GoodList.load() {
-            self.viewModel = GoodListViewModel(data: goodList)
+            let basket = Basket()
+            self.viewModel = GoodListViewModel(data: goodList, basket: basket)
         }
     }
 
@@ -51,6 +49,15 @@ class GoodListTableViewController: UITableViewController {
         return cell
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "checkOutSegue" {
+            if let controller = segue.destination as? CheckOutViewController,
+                let basket = self.viewModel?.basket {
+                let viewModel = CheckOutViewModel(basket: basket)
+                controller.viewModel = viewModel
+            }
+        }
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

@@ -8,19 +8,25 @@
 
 import Foundation
 
-protocol GoodListInteractorProtocol {
-}
-
 protocol GoodListViewModelProtocol {
     var numberOfSections: Int { get }
     var rowsPersection: [Int] { get }
+    var basket: Basket { get }
 
     func dataForCell(section: Int, row: Int) -> GoodListCellDataSource?
 
-    init(data: [Good])
+    init(data: [Good], basket: Basket)
 }
 
 class GoodListViewModel: GoodListViewModelProtocol {
+    var data: [Good]
+    var basket: Basket
+
+    required init(data: [Good], basket: Basket) {
+        self.data = data
+        self.basket = basket
+    }
+
     var numberOfSections: Int {
         return 1
     }
@@ -32,11 +38,5 @@ class GoodListViewModel: GoodListViewModelProtocol {
     func dataForCell(section: Int, row: Int) -> GoodListCellDataSource? {
         guard data.count > row else { return nil }
         return data[row]
-    }
-
-    var data: [Good]
-
-    required init(data: [Good]) {
-		self.data = data
     }
 }
