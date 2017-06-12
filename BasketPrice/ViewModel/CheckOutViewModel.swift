@@ -23,12 +23,20 @@ protocol CheckOutViewModelProtocol {
 
 class CheckOutViewModel: CheckOutViewModelProtocol {
     var basket: Basket
+    var amountInDollars: Float
 
     required init(basket: Basket) {
         numberOfComponents = 0
         numberOfRows = []
         totaAmount = nil
         self.basket = basket
+
+        // Initial value will be in dollars
+        self.amountInDollars = basket.calculateTotal()
+        if let amountStr = CurrencyHelper.format(amountInDollars,
+                                                 currencyCode: "USD") {
+            self.totaAmount = amountStr
+        }
     }
 
     var numberOfComponents: Int {

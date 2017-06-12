@@ -68,4 +68,13 @@ class Basket {
 
     }
 
+    func calculateTotal() -> Float {
+        var amount: Float = 0.0
+        for element in includedElements {
+            let qty = element.qty
+            let value = element.article.price
+            amount += Float(qty) * value
+        }
+        return amount
+    }
 }

@@ -21,14 +21,19 @@ UIPickerViewDelegate, UIPickerViewDataSource {
             viewModel?.numberOfRowsDidChange = { [unowned self] viewModel in
             }
             viewModel?.totaAmountDidChange = { [unowned self] viewModel in
+                if let qtyStr = viewModel.totaAmount {
+                    self.stopAmountActivity()
+                    self.priceLabel.text = qtyStr
+                } else {
+                    self.startAmountActivity()
+                }
             }
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        priceLabel.text = viewModel?.totaAmount
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,4 +58,15 @@ UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return 0
     }
+
+    func startAmountActivity() {
+        self.priceLabel.text = ""
+        priceActivity.startAnimating()
+    }
+
+    func stopAmountActivity() {
+        self.priceLabel.text = ""
+        priceActivity.stopAnimating()
+    }
+
 }
