@@ -20,9 +20,9 @@ UIPickerViewDelegate, UIPickerViewDataSource {
                 self.currenciesPicker.reloadAllComponents()
             }
             viewModel?.totaAmountDidChange = { [unowned self] viewModel in
-                if let qtyStr = viewModel.totaAmount {
+                if let qty = viewModel.totaAmount {
                     self.stopAmountActivity()
-                    self.priceLabel.text = qtyStr
+                    self.priceLabel.text = qty
                 } else {
                     self.startAmountActivity()
                 }
@@ -41,7 +41,7 @@ UIPickerViewDelegate, UIPickerViewDataSource {
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return self.viewModel?.numberOfComponents ?? 0
+        return 1
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -61,5 +61,4 @@ UIPickerViewDelegate, UIPickerViewDataSource {
         self.priceLabel.text = ""
         priceActivity.stopAnimating()
     }
-
 }

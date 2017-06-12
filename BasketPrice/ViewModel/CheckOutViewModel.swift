@@ -9,9 +9,6 @@
 import Foundation
 
 protocol CheckOutViewModelProtocol {
-	var numberOfComponents: Int { get }
-	var numberOfComponentsDidChange: ((CheckOutViewModelProtocol) -> Void)? { get set }
-
 	var numberOfRows: [Int] { get }
 	var numberOfRowsDidChange: ((CheckOutViewModelProtocol) -> Void)? { get set }
 
@@ -29,7 +26,6 @@ class CheckOutViewModel: CheckOutViewModelProtocol {
     var currencies: [Currency]
 
     required init(basket: Basket) {
-        numberOfComponents = 0
         numberOfRows = []
         totaAmount = nil
         self.basket = basket
@@ -44,13 +40,6 @@ class CheckOutViewModel: CheckOutViewModelProtocol {
             self.totaAmount = amountStr
         }
     }
-
-    var numberOfComponents: Int {
-        didSet {
-            self.numberOfComponentsDidChange?(self)
-        }
-    }
-    var numberOfComponentsDidChange: ((CheckOutViewModelProtocol) -> Void)?
 
     var numberOfRows: [Int] {
         didSet {
