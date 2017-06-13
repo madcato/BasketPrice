@@ -16,19 +16,23 @@ UIPickerViewDelegate, UIPickerViewDataSource {
 
     var viewModel: CheckOutViewModelProtocol? {
         didSet {
-            viewModel?.numberOfComponentsDidChange = { [unowned self] viewModel in
-            }
             viewModel?.numberOfRowsDidChange = { [unowned self] viewModel in
+                self.currenciesPicker.reloadAllComponents()
             }
             viewModel?.totaAmountDidChange = { [unowned self] viewModel in
+                if let qty = viewModel.totaAmount {
+                    self.stopAmountActivity()
+                    self.priceLabel.text = qty
+                } else {
+                    self.startAmountActivity()
+                }
             }
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        priceLabel.text = viewModel?.totaAmount
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,21 +40,25 @@ UIPickerViewDelegate, UIPickerViewDataSource {
         // Dispose of any resources that can be recreated.
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 0
+        return self.viewModel?.numberOfRows[component] ?? 0
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return self.viewModel?.title(for: row, in: component) ?? ""
+    }
+
+    func startAmountActivity() {
+        self.priceLabel.text = ""
+        priceActivity.startAnimating()
+    }
+
+    func stopAmountActivity() {
+        self.priceLabel.text = ""
+        priceActivity.stopAnimating()
     }
 }

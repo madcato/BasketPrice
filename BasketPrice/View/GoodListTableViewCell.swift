@@ -20,10 +20,18 @@ class GoodListTableViewCell: UITableViewCell {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var qtyLabel: UILabel!
 
-    func configure(_ data: GoodListCellDataSource?) {
+    var data: GoodListCellDataSource?
+    var viewModel: GoodListViewModelProtocol?
+
+    func configure(_ data: GoodListCellDataSource?, viewModel: GoodListViewModelProtocol?) {
+        self.data = data
+        self.viewModel = viewModel
         nameLabel.text = data?.nameForCell
         priceLabel.text = data?.priceForCell
-        qtyLabel.text = data?.qtyForCell
+        if let data = data {
+            let qty = viewModel?.qty(for: data) ?? 0
+            qtyLabel.text = "\(qty)"
+        }
     }
 
     override func awakeFromNib() {
@@ -33,11 +41,16 @@ class GoodListTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
 
     @IBAction func qtyStepperChanged(_ sender: UIStepper) {
-        qtyLabel.text = "\(Int(sender.value))"
+        if let qtyLabel = qtyLabel {
+            let qty = Int(sender.value)
+            qtyLabel.text = "\(qty)"
+            if let data = self.data {
+                viewModel?.update(good: data, qty: qty)
+            }
+        }
     }
 }

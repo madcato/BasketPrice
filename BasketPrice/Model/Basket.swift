@@ -38,6 +38,26 @@ class Basket {
         }
     }
 
+    func qty(for good: Good) -> Int {
+        let elements = findElement(good)
+        if elements.count > 0 {
+            return elements[0].qty
+        }
+        return 0
+    }
+
+    func update(_ element: Good, qty: Int) {
+        let found = findElement(element)
+        if found.count > 0 {
+            var basketElement = found[0]
+            basketElement.qty = qty
+            includedElements.update(with: basketElement)
+        } else {
+            let basketElement = BasketElement(article: element, qty: qty)
+            includedElements.insert(basketElement)
+        }
+    }
+
     func findElement(_ element: Good) -> [BasketElement] {
         return includedElements.filter { (basketElement) -> Bool in
             if basketElement.article == element {
@@ -48,4 +68,13 @@ class Basket {
 
     }
 
+    func calculateTotal() -> Float {
+        var amount: Float = 0.0
+        for element in includedElements {
+            let qty = element.qty
+            let value = element.article.price
+            amount += Float(qty) * value
+        }
+        return amount
+    }
 }
