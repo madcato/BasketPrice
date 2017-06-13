@@ -15,3 +15,4 @@ Technical evaluation "iOS Developer" - Home coding exercise
 ## External services
 
 - [currencylayer](https://currencylayer.com/?ref=jsonrates) http://jsonrates.com seems deprecatedand some services fail.
+- [currencylayer Service doc](https://github.com/madcato/BasketPrice/wiki/Currency-conversion-service)
