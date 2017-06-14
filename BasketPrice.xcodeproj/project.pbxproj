@@ -18,6 +18,8 @@
 		0B1047F81EF10C5C0022309F /* CurrencyLayerServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1047F71EF10C5C0022309F /* CurrencyLayerServiceFactory.swift */; };
 		0B1047FA1EF10DEC0022309F /* HttpRequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1047F91EF10DEC0022309F /* HttpRequestData.swift */; };
 		0B1047FC1EF114700022309F /* ServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1047FB1EF114700022309F /* ServicesTests.swift */; };
+		0B1047FE1EF185920022309F /* CurrencyRateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1047FD1EF185920022309F /* CurrencyRateTests.swift */; };
+		0B1048001EF18A010022309F /* UIViewController+showAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1047FF1EF18A010022309F /* UIViewController+showAlert.swift */; };
 		0B137F7F1EEEF12000483E85 /* CurrencyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B137F7E1EEEF12000483E85 /* CurrencyHelper.swift */; };
 		0B137F811EEEF1FB00483E85 /* CurrencyHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B137F801EEEF1FB00483E85 /* CurrencyHelperTests.swift */; };
 		0B137F831EEEF5B200483E85 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B137F821EEEF5B200483E85 /* Currency.swift */; };
@@ -70,6 +72,8 @@
 		0B1047F71EF10C5C0022309F /* CurrencyLayerServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyLayerServiceFactory.swift; sourceTree = "<group>"; };
 		0B1047F91EF10DEC0022309F /* HttpRequestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequestData.swift; sourceTree = "<group>"; };
 		0B1047FB1EF114700022309F /* ServicesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesTests.swift; sourceTree = "<group>"; };
+		0B1047FD1EF185920022309F /* CurrencyRateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyRateTests.swift; sourceTree = "<group>"; };
+		0B1047FF1EF18A010022309F /* UIViewController+showAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+showAlert.swift"; sourceTree = "<group>"; };
 		0B137F7E1EEEF12000483E85 /* CurrencyHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyHelper.swift; sourceTree = "<group>"; };
 		0B137F801EEEF1FB00483E85 /* CurrencyHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyHelperTests.swift; sourceTree = "<group>"; };
 		0B137F821EEEF5B200483E85 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
@@ -208,6 +212,7 @@
 				0B93372D1EEDBC42004C7C73 /* BasketElementTests.swift */,
 				0B137F801EEEF1FB00483E85 /* CurrencyHelperTests.swift */,
 				0B1047FB1EF114700022309F /* ServicesTests.swift */,
+				0B1047FD1EF185920022309F /* CurrencyRateTests.swift */,
 			);
 			path = BasketPriceTests;
 			sourceTree = "<group>";
@@ -238,6 +243,7 @@
 		0B9337051EED2D18004C7C73 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0B1047FF1EF18A010022309F /* UIViewController+showAlert.swift */,
 				0B9337081EED3B43004C7C73 /* GoodListTableViewController.swift */,
 				0B93370A1EED3B68004C7C73 /* CheckOutViewController.swift */,
 			);
@@ -469,6 +475,7 @@
 				0B0D73061EEE975A00EF076E /* BasketElement.swift in Sources */,
 				0B1047F41EF10B2E0022309F /* CurrencyRate.swift in Sources */,
 				0B9337161EED56D2004C7C73 /* GoodList.swift in Sources */,
+				0B1048001EF18A010022309F /* UIViewController+showAlert.swift in Sources */,
 				0B1047F01EF105F90022309F /* HttpRequest.swift in Sources */,
 				0B9337091EED3B43004C7C73 /* GoodListTableViewController.swift in Sources */,
 				0B9337281EEDA65F004C7C73 /* GoodListViewModel.swift in Sources */,
@@ -491,6 +498,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B1047FE1EF185920022309F /* CurrencyRateTests.swift in Sources */,
 				0B1047FC1EF114700022309F /* ServicesTests.swift in Sources */,
 				0B93371E1EED8950004C7C73 /* AppDelegateTests.swift in Sources */,
 				0B93372E1EEDBC42004C7C73 /* BasketElementTests.swift in Sources */,

@@ -38,7 +38,28 @@ class ServicesTests: XCTestCase {
 
         wait(for: [endQueryExpectation], timeout: 5.0)
     }
-    
+
+    func testRates() {
+        let endQueryExpectation = expectation(description: "EndRatesQueryExpectation")
+
+        let fromCurrency = Currency(code: "USD", description: "US Dollars")
+        let toCurrency = Currency(code: "EUR", description: "Euros Europe")
+        service?.liveRates(from: fromCurrency,
+                           to: [toCurrency],
+                           onOK: { (rates) in
+                            XCTAssertEqual(rates.count, 1, "Rates only should return one currency. EUR")
+                            let response = rates[0]
+                            XCTAssertEqual(response.quote, "USDEUR", "Rates: invalid returned quote")
+                            XCTAssertGreaterThan(response.rate, 0, "Rates: Invalid raturned rate")
+                            print(rates)
+                            endQueryExpectation.fulfill()
+                        }, onError: { (desc) in
+                            endQueryExpectation.fulfill()
+            })
+
+        wait(for: [endQueryExpectation], timeout: 5.0)
+    }
+
     func testMissignAccessKeyParameter() {
         let endQueryExpectation = expectation(description: "EndBadQueryExpectation")
 
@@ -86,6 +107,29 @@ class ServicesTests: XCTestCase {
         },
                        onError: { (code, errorDesc) in
                         XCTAssertEqual(code, 0, "Bad server")
+                        endQueryExpectation.fulfill()
+        })
+
+
+        wait(for: [endQueryExpectation], timeout: 5.0)
+    }
+
+    func testInvalidUrlServer() {
+        let endQueryExpectation = expectation(description: "EndInvalidQueryExpectation")
+
+        let url = "htp://apilayer.net/apasdf//ist"
+        let httpData = HttpRequestData(method: .get,
+                                       url: url,
+                                       parameters: nil,
+                                       headers: nil)
+        request?.start(httpData: httpData,
+                       onOK: { (object) -> Void in
+                        XCTAssert(false, "Bad call")
+                        endQueryExpectation.fulfill()
+        },
+                       onError: { (code, errorDesc) in
+                        XCTAssertEqual(code, 0, "Bad server")
+                        XCTAssertEqual(errorDesc, "unsupported URL", "Bad server")
                         endQueryExpectation.fulfill()
         })
 

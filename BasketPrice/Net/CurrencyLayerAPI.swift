@@ -31,11 +31,13 @@ class CurrencyLayerAPI: HttpAPI {
                         parameters: [String: String]?,
                         onOK: @escaping ([String: Any]) -> Void,
                         onError: @escaping (Int, String) -> Void) {
-        var url = endpointUrl(endpoint: endpoint)
-        url += "&access_key=\(apiKey)"
+        var params: [String: String] = parameters ?? [:]
+        params["access_key"] = apiKey
+
+        let url = endpointUrl(endpoint: endpoint)
         let httpData = HttpRequestData(method: .get,
                                        url: url,
-                                       parameters: parameters,
+                                       parameters: params,
                                        headers: nil)
         request.start(httpData: httpData,
                       onOK: { (object) -> Void in

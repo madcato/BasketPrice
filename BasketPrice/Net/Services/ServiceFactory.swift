@@ -9,10 +9,10 @@
 import Foundation
 
 class ServiceFactory {
-    func createService() -> Service {
-        let request = HttpRequest()
-        let api = HttpAPI(request)
-        let service = Service(api)
-        return service
-    }
+//    func createService() -> Service {
+//        let request = HttpRequest()
+//        let api = HttpAPI(request)
+//        let service = Service(api)
+//        return service
+//    }
 }

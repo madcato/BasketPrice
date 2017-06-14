@@ -15,10 +15,6 @@ enum HTTPRequestMethod {
 }
 
 class HttpRequest {
-    func post() {
-    }
-    func get() {
-    }
 
     func convertMethod(method: HTTPRequestMethod) -> HTTPMethod {
         switch method {

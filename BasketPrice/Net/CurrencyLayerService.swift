@@ -15,15 +15,12 @@ class CurrencyLayerService: Service {
 
         api.query(endpoint: "list",
                   parameters: nil,
-                  onOK: { (json) -> Void in
-                    var currencies: [Currency] = []
+                  onOK: { [unowned self] (json) -> Void in
                     if let currenciesJson = json["currencies"] as? [String: String] {
-                        for (code, description) in currenciesJson {
-                            let currency = Currency(code: code,
-                                             description: description)
-                            currencies.append(currency)
-                        }
+                        let currencies: [Currency] = self.process(currencies: currenciesJson)
                         onOK(currencies)
+                    } else {
+                        onError("Bad currencies format")
                     }
                   },
                   onError: { (_, description) -> Void in
@@ -34,8 +31,45 @@ class CurrencyLayerService: Service {
     // Return a list of real-time rates
     func liveRates(from currency: Currency,
                    to quotes: [Currency],
-                   onOK: ([CurrencyRate]) -> Void,
-                   onError: (String) -> Void) {
+                   onOK: @escaping ([CurrencyRate]) -> Void,
+                   onError: @escaping (String) -> Void) {
 
+        let quotesString = quotes.map { $0.code }.joined(separator: ",")
+        let parameters = ["currencies": quotesString,
+                          "source": currency.code]
+
+        api.query(endpoint: "live",
+                  parameters: parameters,
+                  onOK: { [unowned self] (json) in
+                    if let quotesJson = json["quotes"] as? [String: Float] {
+                        let quotes: [CurrencyRate] = self.process(quotes: quotesJson)
+                        onOK(quotes)
+                    } else {
+                        onError("Bad live rates format")
+                    }
+            }, onError: { (_, description) in
+                onError(description)
+        })
+
+    }
+
+    func process(currencies currenciesJson: [String: String]) -> [Currency] {
+        var currencies: [Currency] = []
+        for (code, description) in currenciesJson {
+            let currency = Currency(code: code,
+            description: description)
+            currencies.append(currency)
+        }
+        return currencies
+    }
+
+    func process(quotes quotesJson: [String: Float]) -> [CurrencyRate] {
+        var quotes: [CurrencyRate] = []
+        for (quote, rate) in quotesJson {
+            let currency = CurrencyRate(quote: quote,
+                                        rate: rate)
+            quotes.append(currency)
+        }
+        return quotes
     }
 }

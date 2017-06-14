@@ -52,6 +52,10 @@ UIPickerViewDelegate, UIPickerViewDataSource {
         return self.viewModel?.title(for: row, in: component) ?? ""
     }
 
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.viewModel?.calculateAmount(for: row, in: component)
+    }
+
     func startAmountActivity() {
         self.priceLabel.text = ""
         priceActivity.startAnimating()

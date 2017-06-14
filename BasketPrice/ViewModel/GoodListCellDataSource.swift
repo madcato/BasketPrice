@@ -14,12 +14,12 @@ extension Good: GoodListCellDataSource {
     }
 
     var priceForCell: String {
-        // FIXME convert to $
-        return "\(price) per \(package)"
-    }
+        let priceInDollars = CurrencyHelper.format(price,
+                                                   currencyCode: "USD")
+        if let priceInDollars = priceInDollars {
+            return "\(priceInDollars) per \(package)"
 
-    var qtyForCell: String {
-        // FIXME return the basket qty
-        return "0"
+        }
+        return "\(price) per \(package)"
     }
 }

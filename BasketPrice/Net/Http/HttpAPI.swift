@@ -42,4 +42,8 @@ class HttpAPI {
                onOK: @escaping ([String: Any]) -> Void,
                onError: @escaping (Int, String) -> Void) {
     }
+
+    func cancel() {
+        request.cancel()
+    }
 }

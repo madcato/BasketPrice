@@ -14,4 +14,8 @@ class Service {
     required init(_ api: HttpAPI) {
         self.api = api
     }
+
+    func cancel() {
+        api.cancel()
+    }
 }

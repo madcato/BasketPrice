@@ -11,7 +11,6 @@ import UIKit
 protocol GoodListCellDataSource {
     var nameForCell: String { get }
     var priceForCell: String { get }
-    var qtyForCell: String { get }
 }
 
 class GoodListTableViewCell: UITableViewCell {
