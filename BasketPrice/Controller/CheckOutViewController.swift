@@ -47,7 +47,7 @@ UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return self.viewModel?.numberOfRows[component] ?? 0
     }
-    
+
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return self.viewModel?.title(for: row, in: component) ?? ""
     }

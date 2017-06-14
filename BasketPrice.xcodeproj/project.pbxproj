@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		0B0D73061EEE975A00EF076E /* BasketElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0D73041EEE93FF00EF076E /* BasketElement.swift */; };
+		0B1047EA1EF105D40022309F /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1047E81EF105D40022309F /* Service.swift */; };
+		0B1047EB1EF105D40022309F /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1047E91EF105D40022309F /* ServiceFactory.swift */; };
+		0B1047EF1EF105F90022309F /* HttpAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1047ED1EF105F90022309F /* HttpAPI.swift */; };
+		0B1047F01EF105F90022309F /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1047EE1EF105F90022309F /* HttpRequest.swift */; };
+		0B1047F21EF109890022309F /* CurrencyLayerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1047F11EF109890022309F /* CurrencyLayerAPI.swift */; };
+		0B1047F41EF10B2E0022309F /* CurrencyRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1047F31EF10B2E0022309F /* CurrencyRate.swift */; };
+		0B1047F61EF10C330022309F /* CurrencyLayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1047F51EF10C330022309F /* CurrencyLayerService.swift */; };
+		0B1047F81EF10C5C0022309F /* CurrencyLayerServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1047F71EF10C5C0022309F /* CurrencyLayerServiceFactory.swift */; };
+		0B1047FA1EF10DEC0022309F /* HttpRequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1047F91EF10DEC0022309F /* HttpRequestData.swift */; };
 		0B137F7F1EEEF12000483E85 /* CurrencyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B137F7E1EEEF12000483E85 /* CurrencyHelper.swift */; };
 		0B137F811EEEF1FB00483E85 /* CurrencyHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B137F801EEEF1FB00483E85 /* CurrencyHelperTests.swift */; };
 		0B137F831EEEF5B200483E85 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B137F821EEEF5B200483E85 /* Currency.swift */; };
@@ -50,6 +59,15 @@
 
 /* Begin PBXFileReference section */
 		0B0D73041EEE93FF00EF076E /* BasketElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketElement.swift; sourceTree = "<group>"; };
+		0B1047E81EF105D40022309F /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		0B1047E91EF105D40022309F /* ServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
+		0B1047ED1EF105F90022309F /* HttpAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpAPI.swift; sourceTree = "<group>"; };
+		0B1047EE1EF105F90022309F /* HttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
+		0B1047F11EF109890022309F /* CurrencyLayerAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyLayerAPI.swift; sourceTree = "<group>"; };
+		0B1047F31EF10B2E0022309F /* CurrencyRate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyRate.swift; sourceTree = "<group>"; };
+		0B1047F51EF10C330022309F /* CurrencyLayerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyLayerService.swift; sourceTree = "<group>"; };
+		0B1047F71EF10C5C0022309F /* CurrencyLayerServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyLayerServiceFactory.swift; sourceTree = "<group>"; };
+		0B1047F91EF10DEC0022309F /* HttpRequestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequestData.swift; sourceTree = "<group>"; };
 		0B137F7E1EEEF12000483E85 /* CurrencyHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyHelper.swift; sourceTree = "<group>"; };
 		0B137F801EEEF1FB00483E85 /* CurrencyHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyHelperTests.swift; sourceTree = "<group>"; };
 		0B137F821EEEF5B200483E85 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
@@ -105,6 +123,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B1047E61EF105830022309F /* Net */ = {
+			isa = PBXGroup;
+			children = (
+				0B1047EC1EF105E00022309F /* Http */,
+				0B1047E71EF105AF0022309F /* Services */,
+				0B1047F11EF109890022309F /* CurrencyLayerAPI.swift */,
+				0B1047F51EF10C330022309F /* CurrencyLayerService.swift */,
+				0B1047F71EF10C5C0022309F /* CurrencyLayerServiceFactory.swift */,
+			);
+			path = Net;
+			sourceTree = "<group>";
+		};
+		0B1047E71EF105AF0022309F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0B1047E81EF105D40022309F /* Service.swift */,
+				0B1047E91EF105D40022309F /* ServiceFactory.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		0B1047EC1EF105E00022309F /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				0B1047EE1EF105F90022309F /* HttpRequest.swift */,
+				0B1047F91EF10DEC0022309F /* HttpRequestData.swift */,
+				0B1047ED1EF105F90022309F /* HttpAPI.swift */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
 		0B9336D61EEBF31C004C7C73 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +177,7 @@
 		0B9336E11EEBF31C004C7C73 /* BasketPrice */ = {
 			isa = PBXGroup;
 			children = (
+				0B1047E61EF105830022309F /* Net */,
 				0B93370E1EED4EEA004C7C73 /* Data */,
 				0B9337071EED2D2B004C7C73 /* Helper */,
 				0B9337061EED2D20004C7C73 /* View */,
@@ -167,6 +217,7 @@
 				0B9337291EEDB5F2004C7C73 /* Basket.swift */,
 				0B0D73041EEE93FF00EF076E /* BasketElement.swift */,
 				0B137F821EEEF5B200483E85 /* Currency.swift */,
+				0B1047F31EF10B2E0022309F /* CurrencyRate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -408,16 +459,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BFB42D61EEE617A0056EBEC /* CheckOutViewModel.swift in Sources */,
+				0B1047F61EF10C330022309F /* CurrencyLayerService.swift in Sources */,
 				0B93370B1EED3B68004C7C73 /* CheckOutViewController.swift in Sources */,
+				0B1047EA1EF105D40022309F /* Service.swift in Sources */,
+				0B1047FA1EF10DEC0022309F /* HttpRequestData.swift in Sources */,
 				0B0D73061EEE975A00EF076E /* BasketElement.swift in Sources */,
+				0B1047F41EF10B2E0022309F /* CurrencyRate.swift in Sources */,
 				0B9337161EED56D2004C7C73 /* GoodList.swift in Sources */,
+				0B1047F01EF105F90022309F /* HttpRequest.swift in Sources */,
 				0B9337091EED3B43004C7C73 /* GoodListTableViewController.swift in Sources */,
 				0B9337281EEDA65F004C7C73 /* GoodListViewModel.swift in Sources */,
 				0B137F7F1EEEF12000483E85 /* CurrencyHelper.swift in Sources */,
+				0B1047EB1EF105D40022309F /* ServiceFactory.swift in Sources */,
+				0B1047EF1EF105F90022309F /* HttpAPI.swift in Sources */,
+				0B1047F81EF10C5C0022309F /* CurrencyLayerServiceFactory.swift in Sources */,
 				0B9337141EED510A004C7C73 /* PropertyListHelper.swift in Sources */,
 				0BFB42D81EEE641B0056EBEC /* GoodListCellDataSource.swift in Sources */,
 				0B9337121EED5031004C7C73 /* Good.swift in Sources */,
 				0B93372A1EEDB5F2004C7C73 /* Basket.swift in Sources */,
+				0B1047F21EF109890022309F /* CurrencyLayerAPI.swift in Sources */,
 				0B93370D1EED3B9F004C7C73 /* GoodListTableViewCell.swift in Sources */,
 				0B137F831EEEF5B200483E85 /* Currency.swift in Sources */,
 				0B9336E31EEBF31C004C7C73 /* AppDelegate.swift in Sources */,
