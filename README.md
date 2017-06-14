@@ -6,6 +6,9 @@
 
 Technical evaluation "iOS Developer" - Home coding exercise
 
+I have not used http://jsonrates.com/ service, because is discontinuated. Instead, I have used https://currencylayer.com. 
+
+This other service doesn't provide a free conversion endpoint(as http://jsonrates.com had). To solve this, I've used the live currency rate conversion from http://currencylayer.com, and the conversion is made by my app directly. Also the list of available currencies is downloaded from this other service.
 
 ## Dependencies
 
