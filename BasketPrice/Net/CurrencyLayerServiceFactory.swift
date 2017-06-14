@@ -9,7 +9,7 @@
 import Foundation
 
 class CurrencyLayerServiceFactory: ServiceFactory {
-    override func createService() -> Service {
+    func createCLService() -> CurrencyLayerService {
         let request = HttpRequest()
         let api = CurrencyLayerAPI(request)
         let service = CurrencyLayerService(api)

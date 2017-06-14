@@ -17,6 +17,7 @@
 		0B1047F61EF10C330022309F /* CurrencyLayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1047F51EF10C330022309F /* CurrencyLayerService.swift */; };
 		0B1047F81EF10C5C0022309F /* CurrencyLayerServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1047F71EF10C5C0022309F /* CurrencyLayerServiceFactory.swift */; };
 		0B1047FA1EF10DEC0022309F /* HttpRequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1047F91EF10DEC0022309F /* HttpRequestData.swift */; };
+		0B1047FC1EF114700022309F /* NetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1047FB1EF114700022309F /* NetTests.swift */; };
 		0B137F7F1EEEF12000483E85 /* CurrencyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B137F7E1EEEF12000483E85 /* CurrencyHelper.swift */; };
 		0B137F811EEEF1FB00483E85 /* CurrencyHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B137F801EEEF1FB00483E85 /* CurrencyHelperTests.swift */; };
 		0B137F831EEEF5B200483E85 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B137F821EEEF5B200483E85 /* Currency.swift */; };
@@ -68,6 +69,7 @@
 		0B1047F51EF10C330022309F /* CurrencyLayerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyLayerService.swift; sourceTree = "<group>"; };
 		0B1047F71EF10C5C0022309F /* CurrencyLayerServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyLayerServiceFactory.swift; sourceTree = "<group>"; };
 		0B1047F91EF10DEC0022309F /* HttpRequestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequestData.swift; sourceTree = "<group>"; };
+		0B1047FB1EF114700022309F /* NetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetTests.swift; sourceTree = "<group>"; };
 		0B137F7E1EEEF12000483E85 /* CurrencyHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyHelper.swift; sourceTree = "<group>"; };
 		0B137F801EEEF1FB00483E85 /* CurrencyHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyHelperTests.swift; sourceTree = "<group>"; };
 		0B137F821EEEF5B200483E85 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				0B9337231EED94D8004C7C73 /* GoodListTableViewControllerTests.swift */,
 				0B93372D1EEDBC42004C7C73 /* BasketElementTests.swift */,
 				0B137F801EEEF1FB00483E85 /* CurrencyHelperTests.swift */,
+				0B1047FB1EF114700022309F /* NetTests.swift */,
 			);
 			path = BasketPriceTests;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B1047FC1EF114700022309F /* NetTests.swift in Sources */,
 				0B93371E1EED8950004C7C73 /* AppDelegateTests.swift in Sources */,
 				0B93372E1EEDBC42004C7C73 /* BasketElementTests.swift in Sources */,
 				0B137F811EEEF1FB00483E85 /* CurrencyHelperTests.swift in Sources */,

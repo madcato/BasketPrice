@@ -10,5 +10,6 @@ import Foundation
 
 struct Currency {
     var code: String = "USD"
+    var description: String = "US Dollars"
     var symbol: String = "$"
 }

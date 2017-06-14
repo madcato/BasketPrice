@@ -21,16 +21,20 @@ class CurrencyLayerAPI: HttpAPI {
         return basePathName
     }
 
-//    override func query(endpoint: String,
-//                        parameters: [String: String],,
-//                        onOK: @escaping (Any?) -> Void,
-//                        onError: @escaping (Int, String) -> Void) {
-//        let httpData = HttpRequestData(method: .get,
-//                                       url: endpointUrl(endpoint: endpoint),
-//                                       parameters: nil,
-//                                       headers: nil)
-//        request.start(httpData: httpData,
-//                      onOK: onOK,
-//                      onError: onError)
-//    }
+    override func query(endpoint: String,
+                        parameters: [String: String]?,
+                        onOK: @escaping (Any?) -> Void,
+                        onError: @escaping (Int, String) -> Void) {
+        var url = endpointUrl(endpoint: endpoint)
+        url += "&access_key=\(apiKey)"
+        let httpData = HttpRequestData(method: .get,
+                                       url: url,
+                                       parameters: parameters,
+                                       headers: nil)
+        request.start(httpData: httpData,
+                      onOK: onOK, // FIXME check success or failure
+                      onError: onError)
+
+
+    }
 }

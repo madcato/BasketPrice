@@ -14,7 +14,20 @@ class CurrencyLayerService: Service {
                            onError: @escaping (String) -> Void) {
 
         api.query(endpoint: "list",
+                  parameters: nil,
                   onOK: { (result) -> Void in
+                    var currencies: [Currency] = []
+                    if let json = result as? [String: Any?] {
+                        if let currenciesObject = json["currencies"] as? [String: String] {
+                            for (code, description) in currenciesObject {
+                                let currency = Currency(code: code,
+                                                        description: description,
+                                                        symbol: "")
+                                currencies.append(currency)
+                            }
+                            onOK(currencies)
+                        }
+                    }
         },
                   onError: { (code, description) -> Void in
         })
