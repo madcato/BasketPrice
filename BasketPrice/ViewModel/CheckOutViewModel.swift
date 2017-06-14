@@ -56,6 +56,10 @@ class CheckOutViewModel: CheckOutViewModelProtocol {
     var totaAmountDidChange: ((CheckOutViewModelProtocol) -> Void)?
 
     func title(for row: Int, in component: Int) -> String? {
-        return currencies[row].symbol
+        guard currencies.count > row else {
+            return nil
+        }
+        let currency = currencies[row]
+        return currency.code + " " + currency.description
     }
 }

@@ -8,8 +8,12 @@
 
 import Foundation
 
-struct Currency {
+class Currency {
     var code: String = "USD"
     var description: String = "US Dollars"
-    var symbol: String = "$"
+
+    required init(code: String, description: String) {
+        self.code = code
+        self.description = description
+    }
 }

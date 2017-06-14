@@ -15,21 +15,19 @@ class CurrencyLayerService: Service {
 
         api.query(endpoint: "list",
                   parameters: nil,
-                  onOK: { (result) -> Void in
+                  onOK: { (json) -> Void in
                     var currencies: [Currency] = []
-                    if let json = result as? [String: Any?] {
-                        if let currenciesObject = json["currencies"] as? [String: String] {
-                            for (code, description) in currenciesObject {
-                                let currency = Currency(code: code,
-                                                        description: description,
-                                                        symbol: "")
-                                currencies.append(currency)
-                            }
-                            onOK(currencies)
+                    if let currenciesJson = json["currencies"] as? [String: String] {
+                        for (code, description) in currenciesJson {
+                            let currency = Currency(code: code,
+                                             description: description)
+                            currencies.append(currency)
                         }
+                        onOK(currencies)
                     }
-        },
-                  onError: { (code, description) -> Void in
+                  },
+                  onError: { (_, description) -> Void in
+                    onError(description)
         })
     }
 

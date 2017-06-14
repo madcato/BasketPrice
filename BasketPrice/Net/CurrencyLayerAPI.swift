@@ -9,9 +9,15 @@
 import Foundation
 
 class CurrencyLayerAPI: HttpAPI {
+#if PRODUCTION
     var serverHostName = "apilayer.net"
     var basePathName = "/api/"
     var apiKey = "63be47e940dd7a88872063a506a71170" // Add this info to an untracked file
+#elseif DEBUG
+	var serverHostName = "apilayer.net"
+	var basePathName = "/api/"
+	var apiKey = "63be47e940dd7a88872063a506a71170" // Add this info to an untracked file
+#endif
 
     override func serverHost() -> String {
         return serverHostName
@@ -23,7 +29,7 @@ class CurrencyLayerAPI: HttpAPI {
 
     override func query(endpoint: String,
                         parameters: [String: String]?,
-                        onOK: @escaping (Any?) -> Void,
+                        onOK: @escaping ([String: Any]) -> Void,
                         onError: @escaping (Int, String) -> Void) {
         var url = endpointUrl(endpoint: endpoint)
         url += "&access_key=\(apiKey)"
@@ -32,9 +38,24 @@ class CurrencyLayerAPI: HttpAPI {
                                        parameters: parameters,
                                        headers: nil)
         request.start(httpData: httpData,
-                      onOK: onOK, // FIXME check success or failure
+                      onOK: { (object) -> Void in
+                        if let json = object as? [String: Any],
+                            let success = json["success"] as? Bool {
+                            if success {
+                                onOK(json)
+                            } else {
+                                if let error = json["error"] as? [String: Any],
+                                let code = error["code"] as? Int,
+                                    let info = error["info"] as? String {
+                                    onError(code, info)
+                                } else {
+                                    onError(0, "Bad response format on error")
+                                }
+                            }
+                            } else {
+                                onError(0, "Bad response format")
+                            }
+                      },
                       onError: onError)
-
-
     }
 }

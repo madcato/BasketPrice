@@ -39,14 +39,7 @@ class HttpAPI {
 
     func query(endpoint: String,
                parameters: [String: String]?,
-               onOK: @escaping (Any?) -> Void,
+               onOK: @escaping ([String: Any]) -> Void,
                onError: @escaping (Int, String) -> Void) {
-        let httpData = HttpRequestData(method: .get,
-                                       url: endpointUrl(endpoint: endpoint),
-                                       parameters: parameters,
-                                       headers: nil)
-        request.start(httpData: httpData,
-                      onOK: onOK,
-                      onError: onError)
     }
 }
