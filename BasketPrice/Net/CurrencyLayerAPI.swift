@@ -9,15 +9,10 @@
 import Foundation
 
 class CurrencyLayerAPI: HttpAPI {
-#if PRODUCTION
-    var serverHostName = "apilayer.net"
-    var basePathName = "/api/"
-    var apiKey = "63be47e940dd7a88872063a506a71170" // Add this info to an untracked file
-#elseif DEBUG
+
 	var serverHostName = "apilayer.net"
 	var basePathName = "/api/"
 	var apiKey = "63be47e940dd7a88872063a506a71170" // Add this info to an untracked file
-#endif
 
     override func serverHost() -> String {
         return serverHostName
