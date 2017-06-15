@@ -29,11 +29,4 @@ class GoodListTableViewControllerTest: XCTestCase {
     func testMemoryWarning() {
         controller?.didReceiveMemoryWarning()
     }
-
-    func testNumberOfRowsInSection() {
-        let rows = controller?.viewModel?.rowsPersection[0]
-        let result = controller?.tableView((controller?.tableView)!,
-                                           numberOfRowsInSection: 0)
-        XCTAssertEqual(result, rows, "Wrong numbers of rows in GoodListTableViewController")
-    }
 }

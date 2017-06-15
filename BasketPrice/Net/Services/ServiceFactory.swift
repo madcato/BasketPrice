@@ -8,6 +8,9 @@
 
 import Foundation
 
+// Used to inject network dependency
+protocol NetworkingInjected { }
+
 class ServiceFactory {
 //    func createService() -> Service {
 //        let request = HttpRequest()

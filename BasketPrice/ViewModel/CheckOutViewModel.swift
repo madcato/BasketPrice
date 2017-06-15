@@ -21,11 +21,10 @@ protocol CheckOutViewModelProtocol {
     init(basket: Basket)
 }
 
-class CheckOutViewModel: CheckOutViewModelProtocol {
+class CheckOutViewModel: NetworkingInjected, CheckOutViewModelProtocol {
     var basket: Basket
     var amountInDollars: Float
     var currencies: [Currency]
-    var service: CurrencyLayerService?
 
     required init(basket: Basket) {
         numberOfRows = [0]
@@ -43,9 +42,7 @@ class CheckOutViewModel: CheckOutViewModelProtocol {
     }
 
     func downloadCurrencies() {
-        service = CurrencyLayerServiceFactory().createCLService()
-
-        service?.listAllCurrencies(onOK: { (currencies) in
+        service.listAllCurrencies(onOK: { (currencies) in
             let orderDescending: (Currency, Currency) -> Bool = { $0.code < $1.code }
             self.currencies = currencies.sorted(by: orderDescending)
             self.numberOfRows = [currencies.count]
@@ -83,15 +80,9 @@ class CheckOutViewModel: CheckOutViewModelProtocol {
 
         totaAmount = nil
 
-        if let service = self.service {
-            service.cancel()
-        } else {
-            service = CurrencyLayerServiceFactory().createCLService()
-        }
-
         let fromCurrency = Currency(code: "USD", description: "")
         let toCurrency = currencies[row]
-        service?.liveRates(from: fromCurrency,
+        service.liveRates(from: fromCurrency,
                            to: [toCurrency],
                            onOK: { [unowned self](currencyRate) in
                             guard currencyRate.count == 1 else {

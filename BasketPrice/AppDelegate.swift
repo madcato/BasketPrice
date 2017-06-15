@@ -16,7 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        if let navigationController = window?.rootViewController as? UINavigationController,
+            let goodListVC = navigationController.topViewController as? GoodListTableViewController {
+            if let goodList = GoodList.load() {
+                let basket = Basket()
+                goodListVC.viewModel = GoodListViewModel(data: goodList, basket: basket)
+            }
+        }
         return true
     }
 

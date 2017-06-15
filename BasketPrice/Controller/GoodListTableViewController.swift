@@ -14,11 +14,6 @@ class GoodListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if let goodList = GoodList.load() {
-            let basket = Basket()
-            self.viewModel = GoodListViewModel(data: goodList, basket: basket)
-        }
     }
 
     override func didReceiveMemoryWarning() {

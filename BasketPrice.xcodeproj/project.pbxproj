@@ -23,6 +23,9 @@
 		0B137F7F1EEEF12000483E85 /* CurrencyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B137F7E1EEEF12000483E85 /* CurrencyHelper.swift */; };
 		0B137F811EEEF1FB00483E85 /* CurrencyHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B137F801EEEF1FB00483E85 /* CurrencyHelperTests.swift */; };
 		0B137F831EEEF5B200483E85 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B137F821EEEF5B200483E85 /* Currency.swift */; };
+		0B137F851EF2EC9400483E85 /* CurrencyLayerNetworkInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B137F841EF2EC9400483E85 /* CurrencyLayerNetworkInjection.swift */; };
+		0B137F871EF2EE7300483E85 /* CheckOutViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B137F861EF2EE7300483E85 /* CheckOutViewModelTests.swift */; };
+		0B137F891EF2EEB400483E85 /* GoodListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B137F881EF2EEB400483E85 /* GoodListViewModelTests.swift */; };
 		0B9336E31EEBF31C004C7C73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9336E21EEBF31C004C7C73 /* AppDelegate.swift */; };
 		0B9336E81EEBF31C004C7C73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B9336E61EEBF31C004C7C73 /* Main.storyboard */; };
 		0B9336EA1EEBF31C004C7C73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B9336E91EEBF31C004C7C73 /* Assets.xcassets */; };
@@ -77,6 +80,9 @@
 		0B137F7E1EEEF12000483E85 /* CurrencyHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyHelper.swift; sourceTree = "<group>"; };
 		0B137F801EEEF1FB00483E85 /* CurrencyHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyHelperTests.swift; sourceTree = "<group>"; };
 		0B137F821EEEF5B200483E85 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		0B137F841EF2EC9400483E85 /* CurrencyLayerNetworkInjection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyLayerNetworkInjection.swift; sourceTree = "<group>"; };
+		0B137F861EF2EE7300483E85 /* CheckOutViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckOutViewModelTests.swift; sourceTree = "<group>"; };
+		0B137F881EF2EEB400483E85 /* GoodListViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodListViewModelTests.swift; sourceTree = "<group>"; };
 		0B9336DF1EEBF31C004C7C73 /* BasketPrice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasketPrice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B9336E21EEBF31C004C7C73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B9336E71EEBF31C004C7C73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -137,6 +143,7 @@
 				0B1047F11EF109890022309F /* CurrencyLayerAPI.swift */,
 				0B1047F51EF10C330022309F /* CurrencyLayerService.swift */,
 				0B1047F71EF10C5C0022309F /* CurrencyLayerServiceFactory.swift */,
+				0B137F841EF2EC9400483E85 /* CurrencyLayerNetworkInjection.swift */,
 			);
 			path = Net;
 			sourceTree = "<group>";
@@ -213,6 +220,8 @@
 				0B137F801EEEF1FB00483E85 /* CurrencyHelperTests.swift */,
 				0B1047FB1EF114700022309F /* ServicesTests.swift */,
 				0B1047FD1EF185920022309F /* CurrencyRateTests.swift */,
+				0B137F861EF2EE7300483E85 /* CheckOutViewModelTests.swift */,
+				0B137F881EF2EEB400483E85 /* GoodListViewModelTests.swift */,
 			);
 			path = BasketPriceTests;
 			sourceTree = "<group>";
@@ -476,6 +485,7 @@
 				0B1047F41EF10B2E0022309F /* CurrencyRate.swift in Sources */,
 				0B9337161EED56D2004C7C73 /* GoodList.swift in Sources */,
 				0B1048001EF18A010022309F /* UIViewController+showAlert.swift in Sources */,
+				0B137F851EF2EC9400483E85 /* CurrencyLayerNetworkInjection.swift in Sources */,
 				0B1047F01EF105F90022309F /* HttpRequest.swift in Sources */,
 				0B9337091EED3B43004C7C73 /* GoodListTableViewController.swift in Sources */,
 				0B9337281EEDA65F004C7C73 /* GoodListViewModel.swift in Sources */,
@@ -500,10 +510,12 @@
 			files = (
 				0B1047FE1EF185920022309F /* CurrencyRateTests.swift in Sources */,
 				0B1047FC1EF114700022309F /* ServicesTests.swift in Sources */,
+				0B137F871EF2EE7300483E85 /* CheckOutViewModelTests.swift in Sources */,
 				0B93371E1EED8950004C7C73 /* AppDelegateTests.swift in Sources */,
 				0B93372E1EEDBC42004C7C73 /* BasketElementTests.swift in Sources */,
 				0B137F811EEEF1FB00483E85 /* CurrencyHelperTests.swift in Sources */,
 				0B9337181EED58B4004C7C73 /* GoodListTests.swift in Sources */,
+				0B137F891EF2EEB400483E85 /* GoodListViewModelTests.swift in Sources */,
 				0B9336F81EEBF31C004C7C73 /* BasketPriceTests.swift in Sources */,
 				0B93371C1EED8887004C7C73 /* GoodListTableViewCellTests.swift in Sources */,
 				0B9337241EED94D8004C7C73 /* GoodListTableViewControllerTests.swift in Sources */,
