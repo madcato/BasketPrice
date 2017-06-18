@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class CurrencyLayerAPI: HttpAPI {
 
@@ -24,7 +25,7 @@ class CurrencyLayerAPI: HttpAPI {
 
     override func query(endpoint: String,
                         parameters: [String: String]?,
-                        onOK: @escaping ([String: Any]) -> Void,
+                        onOK: @escaping (JSON) -> Void,
                         onError: @escaping (Int, String) -> Void) {
         var params: [String: String] = parameters ?? [:]
         params["access_key"] = apiKey
@@ -36,22 +37,22 @@ class CurrencyLayerAPI: HttpAPI {
                                        headers: nil)
         request.start(httpData: httpData,
                       onOK: { (object) -> Void in
-                        if let json = object as? [String: Any],
-                            let success = json["success"] as? Bool {
+                        if let json = object,
+                            let success = json["success"].bool {
                             if success {
                                 onOK(json)
                             } else {
-                                if let error = json["error"] as? [String: Any],
-                                let code = error["code"] as? Int,
-                                    let info = error["info"] as? String {
+                                if let error = json["error"].dictionary,
+                                let code = error["code"]?.int,
+                                    let info = error["info"]?.string {
                                     onError(code, info)
                                 } else {
                                     onError(0, "Bad response format on error")
                                 }
                             }
-                            } else {
-                                onError(0, "Bad response format")
-                            }
+                        } else {
+                            onError(0, "Bad response format")
+                        }
                       },
                       onError: onError)
     }

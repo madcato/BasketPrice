@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 enum HTTPRequestMethod {
     case get
@@ -26,7 +27,7 @@ class HttpRequest {
     }
 
     func start(httpData: HttpRequestData,
-               onOK: @escaping (Any?) -> Void,
+               onOK: @escaping (JSON?) -> Void,
                onError: @escaping (Int, String) -> Void) {
         activity(visible: true)
         print("HTTP Query: \(httpData.method == .post ? "POST":"GET") \(httpData.url)")
@@ -43,10 +44,15 @@ class HttpRequest {
     }
 
     func process(_ response: DataResponse<Any>,
-                 _ onOK: @escaping (Any?) -> Void,
+                 _ onOK: @escaping (JSON?) -> Void,
                  _ onError: @escaping (Int, String) -> Void) {
         guard case let .failure(error) = response.result else {
-            onOK(response.result.value)
+            if let value = response.result.value {
+                let json = JSON(value)
+                onOK(json)
+            } else {
+                print("Unknown error: there is no response or error")
+            }
             return
         }
         if let error = error as? AFError {

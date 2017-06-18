@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class CurrencyLayerService: Service {
     // Return a list of supported currencies
@@ -16,7 +17,7 @@ class CurrencyLayerService: Service {
         api.query(endpoint: "list",
                   parameters: nil,
                   onOK: { [unowned self] (json) -> Void in
-                    if let currenciesJson = json["currencies"] as? [String: String] {
+                    if let currenciesJson = json["currencies"].dictionary {
                         let currencies: [Currency] = self.process(currencies: currenciesJson)
                         onOK(currencies)
                     } else {
@@ -41,7 +42,7 @@ class CurrencyLayerService: Service {
         api.query(endpoint: "live",
                   parameters: parameters,
                   onOK: { [unowned self] (json) in
-                    if let quotesJson = json["quotes"] as? [String: Float] {
+                    if let quotesJson = json["quotes"].dictionary {
                         let quotes: [CurrencyRate] = self.process(quotes: quotesJson)
                         onOK(quotes)
                     } else {
@@ -53,21 +54,21 @@ class CurrencyLayerService: Service {
 
     }
 
-    func process(currencies currenciesJson: [String: String]) -> [Currency] {
+    func process(currencies currenciesJson: [String: JSON]) -> [Currency] {
         var currencies: [Currency] = []
         for (code, description) in currenciesJson {
             let currency = Currency(code: code,
-            description: description)
+            description: description.string ?? "")
             currencies.append(currency)
         }
         return currencies
     }
 
-    func process(quotes quotesJson: [String: Float]) -> [CurrencyRate] {
+    func process(quotes quotesJson: [String: JSON]) -> [CurrencyRate] {
         var quotes: [CurrencyRate] = []
         for (quote, rate) in quotesJson {
             let currency = CurrencyRate(quote: quote,
-                                        rate: rate)
+                                        rate: rate.float ?? 0.0)
             quotes.append(currency)
         }
         return quotes

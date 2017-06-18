@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import BasketPrice
+@testable import SwiftyJSON
 
 class ServicesTests: XCTestCase {
 
@@ -70,10 +71,10 @@ class ServicesTests: XCTestCase {
                                        headers: nil)
         request?.start(httpData: httpData,
                       onOK: { (object) -> Void in
-                        if let json = object as? [String: Any],
-                            let error = json["error"] as? [String: Any],
-                            let code = error["code"] as? Int,
-                            let info = error["info"] as? String {
+                        if let json = object,
+                            let error = json["error"].dictionary,
+                            let code = error["code"]?.int,
+                            let info = error["info"]?.string {
                             XCTAssertEqual(code, 101, "Bad error code for access_key")
                             XCTAssertEqual(info,
                                            "You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]",

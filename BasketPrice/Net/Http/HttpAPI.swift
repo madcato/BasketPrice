@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class HttpAPI {
     var request: HttpRequest
@@ -39,7 +40,7 @@ class HttpAPI {
 
     func query(endpoint: String,
                parameters: [String: String]?,
-               onOK: @escaping ([String: Any]) -> Void,
+               onOK: @escaping (JSON) -> Void,
                onError: @escaping (Int, String) -> Void) {
     }
 
