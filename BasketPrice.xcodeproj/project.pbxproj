@@ -48,6 +48,7 @@
 		0B9337281EEDA65F004C7C73 /* GoodListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9337271EEDA65F004C7C73 /* GoodListViewModel.swift */; };
 		0B93372A1EEDB5F2004C7C73 /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9337291EEDB5F2004C7C73 /* Basket.swift */; };
 		0B93372E1EEDBC42004C7C73 /* BasketElementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B93372D1EEDBC42004C7C73 /* BasketElementTests.swift */; };
+		0BA1F01B1EF8382E00615ECF /* GoodSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA1F01A1EF8382E00615ECF /* GoodSpec.swift */; };
 		0BFB42D61EEE617A0056EBEC /* CheckOutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFB42D51EEE617A0056EBEC /* CheckOutViewModel.swift */; };
 		0BFB42D81EEE641B0056EBEC /* GoodListCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFB42D71EEE641B0056EBEC /* GoodListCellDataSource.swift */; };
 		79F01CC17E31FC37F0C1A9C9 /* Pods_BasketPrice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B23576E0966D0A7875658FC5 /* Pods_BasketPrice.framework */; };
@@ -109,6 +110,7 @@
 		0B9337271EEDA65F004C7C73 /* GoodListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodListViewModel.swift; sourceTree = "<group>"; };
 		0B9337291EEDB5F2004C7C73 /* Basket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
 		0B93372D1EEDBC42004C7C73 /* BasketElementTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketElementTests.swift; sourceTree = "<group>"; };
+		0BA1F01A1EF8382E00615ECF /* GoodSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodSpec.swift; sourceTree = "<group>"; };
 		0BFB42D51EEE617A0056EBEC /* CheckOutViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckOutViewModel.swift; sourceTree = "<group>"; };
 		0BFB42D71EEE641B0056EBEC /* GoodListCellDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodListCellDataSource.swift; sourceTree = "<group>"; };
 		210D3AF36CFEAA079B63589F /* Pods-BasketPriceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasketPriceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BasketPriceTests/Pods-BasketPriceTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				0B1047FD1EF185920022309F /* CurrencyRateTests.swift */,
 				0B137F861EF2EE7300483E85 /* CheckOutViewModelTests.swift */,
 				0B137F881EF2EEB400483E85 /* GoodListViewModelTests.swift */,
+				0BA1F01A1EF8382E00615ECF /* GoodSpec.swift */,
 			);
 			path = BasketPriceTests;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B1047FE1EF185920022309F /* CurrencyRateTests.swift in Sources */,
+				0BA1F01B1EF8382E00615ECF /* GoodSpec.swift in Sources */,
 				0B1047FC1EF114700022309F /* ServicesTests.swift in Sources */,
 				0B137F871EF2EE7300483E85 /* CheckOutViewModelTests.swift in Sources */,
 				0B93371E1EED8950004C7C73 /* AppDelegateTests.swift in Sources */,
